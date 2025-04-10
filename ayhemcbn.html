@@ -1,0 +1,208 @@
+<!-- Full updated HTML with all 55 players -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XFOR TEAM - Free Fire</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0a0a0a;
+      color: #f4f4f4;
+    }
+    header {
+      background: radial-gradient(circle at center, #ff0000 0%, #000000 100%);
+      text-align: center;
+      padding: 120px 20px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.transparenttextures.com/patterns/black-felt.png');
+      opacity: 0.1;
+    }
+    header h1 {
+      font-size: 5rem;
+      margin: 0;
+      text-shadow: 0 0 15px #ff0000, 0 0 30px #000;
+      z-index: 1;
+      position: relative;
+    }
+    header p {
+      font-size: 1.5rem;
+      color: #ccc;
+      z-index: 1;
+      position: relative;
+    }
+    .players {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .players h2 {
+      color: #ff3333;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+    .player-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .player-card {
+      background: linear-gradient(to bottom right, #1c1c1c, #111);
+      border: 1px solid #ff0000;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+      overflow: hidden;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .player-card:hover {
+      transform: translateY(-5px);
+    }
+    .player-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .player-card h3 {
+      font-size: 1.6rem;
+      margin: 10px 0;
+      color: #fff;
+    }
+    .player-card p {
+      color: #aaa;
+      margin: 3px 0;
+    }
+    .socials a {
+      margin: 0 10px;
+      color: #ff3333;
+      text-decoration: none;
+      font-size: 1.6rem;
+      transition: color 0.2s;
+    }
+    .socials a:hover {
+      color: #fff;
+    }
+    .contact {
+      background-color: #111;
+      text-align: center;
+      padding: 60px 20px;
+      border-top: 2px solid #ff0000;
+    }
+    .contact h2 {
+      color: #ff3333;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    .contact p {
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>XFOR TEAM</h1>
+    <p>Free Fire Esports Team</p>
+  </header>
+  <section class="players">
+    <h2>Our Players</h2>
+    <div class="player-grid"></div>
+  </section>
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>Follow us on Instagram or TikTok for more!</p>
+    <div class="socials">
+      <a href="#">📸</a>
+      <a href="#">🎵</a>
+    </div>
+  </section>
+  <script>
+    const players = [
+      { name: "XFOR", id: "247235698", level: 83, device: "PC" },
+      { name: "RTX", id: "3073363895", level: 62, device: "PC" },
+      { name: "SPOOLA", id: "18371795", level: 86, device: "Taliphoun" },
+      { name: "HADOUDI shop", id: "99530327", level: 85, device: "PC" },
+      { name: "SBL", id: "99530327", level: 64, device: "PC" },
+      { name: "JINIX", id: "9410859839", level: 61, device: "Taliphoun" },
+      { name: "ROMEOO", id: "1833330704", level: 67, device: "Taliphoun" },
+      { name: "PANDA", id: "1215503602", level: 69, device: "PC" },
+      { name: "QARTAGI", id: "532792133", level: 70, device: "Taliphoun" },
+      { name: "MO5LES", id: "404084950", level: 85, device: "Taliphoun" },
+      { name: "LOAY", id: "100502676", level: 80, device: "Taliphoun" },
+      { name: "INAYAXAN4SS", id: "113385504", level: 80, device: "Taliphoun" },
+      { name: "ELSO", id: "130492587", level: 78, device: "Taliphoun" },
+      { name: "TOUTA", id: "153241253", level: 68, device: "Taliphoun" },
+      { name: "DOOM", id: "163118061", level: 76, device: "PC" },
+      { name: "BASSEM", id: "165347110", level: 77, device: "PC" },
+      { name: "SHADOW", id: "182738820", level: 76, device: "Taliphoun" },
+      { name: "MOKHTAR", id: "209584090", level: 79, device: "Taliphoun" },
+      { name: "MOTHANA", id: "235092963", level: 72, device: "Taliphoun" },
+      { name: "BNZARTI", id: "423630308", level: 79, device: "Taliphoun" },
+      { name: "SUPRAA", id: "428204569", level: 78, device: "PC" },
+      { name: "RELAX", id: "504147704", level: 74, device: "Taliphoun" },
+      { name: "KIRA", id: "532931316", level: 74, device: "Taliphoun" },
+      { name: "TAKI", id: "548339211", level: 73, device: "PC" },
+      { name: "LWESS", id: "562676378", level: 77, device: "Taliphoun" },
+      { name: "HARBESH", id: "575661228", level: 77, device: "Taliphoun" },
+      { name: "TWIX", id: "584422062", level: 70, device: "Taliphoun" },
+      { name: "HUSHI", id: "644001183", level: 73, device: "Taliphoun" },
+      { name: "HAMZA", id: "646941037", level: 77, device: "Taliphoun" },
+      { name: "SNOOPY", id: "700301778", level: 82, device: "PC" },
+      { name: "9SF", id: "737004094", level: 82, device: "Taliphoun" },
+      { name: "RAMZZY", id: "817658345", level: 82, device: "Taliphoun" },
+      { name: "HELEX", id: "858683674", level: 74, device: "Taliphoun" },
+      { name: "R3DD", id: "897682540", level: 69, device: "PC" },
+      { name: "QUEEN", id: "897930838", level: 83, device: "Taliphoun" },
+      { name: "ITASHI", id: "980980278", level: 73, device: "PC" },
+      { name: "HRX", id: "1043530509", level: 78, device: "PC" },
+      { name: "YONA", id: "1261638873", level: 74, device: "Taliphoun" },
+      { name: "7ARBOUCH", id: "1566013148", level: 79, device: "Taliphoun" },
+      { name: "GANOUCH", id: "1902142283", level: 75, device: "Taliphoun" },
+      { name: "YARA", id: "2349870037", level: 75, device: "Taliphoun" },
+      { name: "TAKI", id: "2889938614", level: 65, device: "PC" },
+      { name: "CHAWIA", id: "2964258330", level: 78, device: "Taliphoun" },
+      { name: "صعيدي", id: "1956092625", level: 84, device: "Taliphoun" },
+      { name: "الزنجي", id: "7117787797", level: 75, device: "Taliphoun" },
+      { name: "معذبكم", id: "647212041", level: 83, device: "Taliphoun" },
+      { name: "موزان", id: "314747841", level: 65, device: "PC" },
+      { name: "اسامة 3kd", id: "335776594", level: 86, device: "PC" },
+      { name: "ملك البيك", id: "396544373", level: 81, device: "Taliphoun" },
+      { name: "سوفي", id: "699893334", level: 77, device: "Taliphoun" },
+      { name: "هلا يا رمانه", id: "1372585796", level: 74, device: "Taliphoun" },
+      { name: "لطشا", id: "1568284555", level: 71, device: "Taliphoun" }
+    ];
+
+    const container = document.querySelector(".player-grid");
+    players.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "player-card";
+      card.innerHTML = `
+        <img src="/default.jpg" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>ID: ${p.id}</p>
+        <p>Level: ${p.level}</p>
+        <p>Device: ${p.device}</p>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
